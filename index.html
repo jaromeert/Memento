@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Memento</title>
+<meta name="description" content="Memento maakt voor elke bewoner van een woonzorgcentrum een levende fiche: het levensverhaal én de aandachtspunten van vandaag, klaar bij elke shiftwissel. Een studentenproject van KU Leuven in samenwerking met Panenco.">
+<style>
+  :root {
+    --bg: #fbfaf7;
+    --surface: #ffffff;
+    --text: #1f2933;
+    --muted: #5b6672;
+    --accent: #2f6f6a;
+    --accent-text: #ffffff;
+    --border: #e4e0d8;
+    --mark: #fff3a3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181b;
+      --surface: #1c2226;
+      --text: #eef1f3;
+      --muted: #a4afb8;
+      --accent: #6fbfb7;
+      --accent-text: #0f1517;
+      --border: #2d363c;
+      --mark: #5a4e00;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+  header { padding: 20px 0 0; }
+  .brand { font-weight: 700; letter-spacing: 0.04em; color: var(--accent); }
+  .tag { color: var(--muted); font-size: 0.9rem; }
+  .hero { padding: 40px 0 32px; }
+  h1 { font-size: clamp(1.7rem, 5vw, 2.5rem); line-height: 1.2; margin: 0 0 16px; }
+  .sub { font-size: 1.15rem; color: var(--muted); margin: 0; }
+  section { padding: 28px 0; border-top: 1px solid var(--border); }
+  h2 { font-size: 1.35rem; margin: 0 0 16px; }
+  ol.steps { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; counter-reset: step; }
+  ol.steps li {
+    counter-increment: step;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 16px 16px 60px;
+    position: relative;
+  }
+  ol.steps li::before {
+    content: counter(step);
+    position: absolute; left: 16px; top: 14px;
+    width: 32px; height: 32px; border-radius: 50%;
+    background: var(--accent); color: var(--accent-text);
+    display: grid; place-items: center; font-weight: 700;
+  }
+  .cta {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+  }
+  .btn {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--accent-text);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 12px 20px;
+    border-radius: 10px;
+    margin: 4px 0 12px;
+  }
+  .btn:hover { opacity: 0.9; }
+  .small { font-size: 0.9rem; color: var(--muted); }
+  a { color: var(--accent); }
+  mark { background: var(--mark); color: inherit; padding: 0 3px; border-radius: 3px; }
+  footer { padding: 24px 0 48px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.9rem; }
+  #privacy h3 { font-size: 1.05rem; margin: 20px 0 4px; }
+  #privacy p { margin: 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="brand">MEMENTO</div>
+    <div class="tag">Studentenproject KU Leuven in samenwerking met Panenco</div>
+  </header>
+
+  <main>
+    <div class="hero">
+      <h1>Iedereen weet bij de start van de shift wie de bewoners zijn.</h1>
+      <p class="sub">Memento maakt voor elke bewoner een levende fiche: het levensverhaal én de aandachtspunten van vandaag, automatisch klaar bij elke shiftwissel.</p>
+    </div>
+
+    <section>
+      <h2>Hoe het werkt</h2>
+      <ol class="steps">
+        <li>Bij opname vertelt de familie over de bewoner. De app maakt er een korte fiche van.</li>
+        <li>Tijdens de shift spreken zorgmedewerkers kort hun notities in.</li>
+        <li>Bij de shiftwissel staat er per bewoner een overdracht klaar, met het belangrijkste bovenaan.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Voor wie</h2>
+      <p>Woonzorgcentra die willen dat ook interimkrachten en nieuwe collega's de bewoners meteen kennen.</p>
+    </section>
+
+    <section>
+      <h2>Denk mee</h2>
+      <div class="cta">
+        <p>Werkt u in een woonzorgcentrum en wilt u meedenken of als eerste het prototype testen? Laat uw gegevens achter.</p>
+        <!-- VERVANG de link hieronder door de link naar jullie formulier -->
+        <a class="btn" href="LINK-NAAR-FORMULIER" rel="noopener">Laat uw gegevens achter</a>
+        <p class="small">In het formulier vragen we om uw naam, functie, woonzorgcentrum en e-mailadres, en om uw toestemming. Lees eerst onze <a href="#privacy">privacyverklaring</a>.</p>
+        <p class="small">Liever geen formulier? Mail ons op <a href="mailto:EMAILADRES"><mark>[e-mailadres]</mark></a>.</p>
+      </div>
+    </section>
+
+    <section id="privacy">
+      <h2>Privacyverklaring</h2>
+
+      <h3>Wie zijn wij?</h3>
+      <p>Memento is een studentenproject van <mark>[namen teamleden]</mark>, studenten aan KU Leuven, in samenwerking met Panenco. Contact: <mark>[e-mailadres]</mark>.</p>
+
+      <h3>Welke gegevens verzamelen we?</h3>
+      <p>Uw naam, functie, woonzorgcentrum en e-mailadres, en wat u ons zelf vertelt.</p>
+
+      <h3>Waarom en op welke grond?</h3>
+      <p>Enkel om u te contacteren voor een gesprek of een test van ons prototype, binnen dit studentenproject. We verwerken uw gegevens op basis van uw toestemming. U kunt die toestemming op elk moment intrekken.</p>
+
+      <h3>Wie ziet uw gegevens?</h3>
+      <p>Alleen ons team, onze promotor aan KU Leuven en Panenco. We delen ze met niemand anders en gebruiken ze niet voor reclame.</p>
+
+      <h3>Hoe lang bewaren we ze?</h3>
+      <p>Tot het einde van het projectvak, ten laatste in mei 2027. Daarna verwijderen we alles.</p>
+
+      <h3>Uw rechten</h3>
+      <p>U kunt op elk moment vragen om uw gegevens in te zien, te verbeteren of te laten verwijderen. Stuur daarvoor een mail naar <mark>[e-mailadres]</mark>. Bent u niet tevreden over hoe we met uw gegevens omgaan, dan kunt u klacht indienen bij de Gegevensbeschermingsautoriteit.</p>
+
+      <h3>Opnames</h3>
+      <p>We nemen gesprekken enkel op als u daar vooraf uitdrukkelijk mee instemt.</p>
+    </section>
+  </main>
+
+  <footer>
+    Dit is een studentenproject van KU Leuven in samenwerking met Panenco. Er is (nog) geen product te koop.
+  </footer>
+
+</div>
+</body>
+</html>
